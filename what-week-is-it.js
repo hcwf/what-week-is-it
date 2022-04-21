@@ -33,7 +33,7 @@ textStack.spacing = 0;
 textStack.layoutVertically();
 
 let wTextTitle = titleStack.addText("Calendar Week");
-let wTextWeek = weekStack.addText("" + getWeek(day, month, year));
+let wTextWeek = weekStack.addText("" + getWeek(date));
 
 wTextTitle.textColor = TITLE_COLOR;
 wTextTitle.font = FONT_TITLE;
