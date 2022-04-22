@@ -46,7 +46,6 @@ textStack.setPadding(0, 0, 0, 0);
 textStack.spacing = 0;
 textStack.layoutVertically();
 
-
 titleStack.size = TITLE_SIZE;
 titleStack.borderWidth = BORDER_WIDTH;
 titleStack.bottomAlignContent();
@@ -56,8 +55,10 @@ weekStack.borderWidth = BORDER_WIDTH;
 weekStack.topAlignContent();
 
 spacerStack.size = SPACER_SIZE;
+spacerStack.borderWidth = BORDER_WIDTH;
 
 numberStack.size = NUMBER_SIZE;
+numberStack.borderWidth = BORDER_WIDTH;
 numberStack.layoutVertically();
 
 let wTextTitle = titleStack.addText("Calendar Week");
