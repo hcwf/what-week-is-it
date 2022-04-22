@@ -6,7 +6,7 @@
  * What Week Is It?!
  * A JavaScript widget for Scriptable on iOS.
  * Author: hcwf (https://github.com/hcwf)
- * Version: 1.1.1 22.04.2022
+ * Version: 1.1.2 22.04.2022
  */
 
 /**
@@ -25,6 +25,10 @@ const TITLE_COLOR = new Color("#262f2f");
 const WEEK_COLOR = new Color("#809F9D");
 const FONT_TITLE = Font.systemFont(15);
 const FONT_WEEK = Font.boldSystemFont(80);
+const STACK_SIZE = new Size(150, 150);
+const TITLE_SIZE = new Size(120, 40);
+const WEEK_SIZE = new Size(100, 80);
+const BORDER_WIDTH = 2;
 
 let widget = new ListWidget();
 
@@ -32,8 +36,21 @@ let textStack = widget.addStack();
 let titleStack = textStack.addStack();
 let weekStack = textStack.addStack();
 
+textStack.size = STACK_SIZE;
+textStack.borderWidth = BORDER_WIDTH;
+textStack.setPadding(0, 0, 0, 0);
 textStack.spacing = 0;
 textStack.layoutVertically();
+
+
+titleStack.size = TITLE_SIZE;
+titleStack.borderWidth = BORDER_WIDTH;
+titleStack.bottomAlignContent();
+
+weekStack.size = WEEK_SIZE;
+weekStack.borderWidth = BORDER_WIDTH;
+weekStack.topAlignContent();
+weekStack.layoutVertically();
 
 let wTextTitle = titleStack.addText("Calendar Week");
 let wTextWeek = weekStack.addText("" + getWeek(date));
@@ -48,14 +65,17 @@ widget.backgroundGradient = BG_GRADIENT;
 wTextTitle.leftAlignText();
 wTextTitle.textColor = TITLE_COLOR;
 wTextTitle.font = FONT_TITLE;
-wTextTitle.shadowRadius = 2;
-wTextTitle.shadowOffset = new Point(0, 3);
+wTextTitle.shadowRadius = 1;
+wTextTitle.shadowOffset = new Point(0, 2);
 
 wTextWeek.leftAlignText();
 wTextWeek.textColor = WEEK_COLOR;
 wTextWeek.font = FONT_WEEK;
 wTextWeek.shadowRadius = 4;
 wTextWeek.shadowOffset = new Point(0, 3);
+
+let titleSpacer = titleStack.addSpacer(10);
+let weekSpacer = weekStack.addSpacer(10);
 
 /**
  * Gets the current week of the year.
