@@ -18,9 +18,9 @@
  * All the variables needed for the widget.
  */
 const BG_GRADIENT = new LinearGradient();
-const GRADIENT_COLORS = [new Color("#292f29"), new Color("#535853")];
+const GRADIENT_COLORS = [new Color("#292f29"), new Color("#addaca")];
 const GRADIENT_X = new Point(0, 2);
-const GRADIENT_Y = new Point(0, );
+const GRADIENT_Y = new Point(0, 0);
 const TITLE_COLOR = new Color("#262f2f");
 const WEEK_COLOR = new Color("#809F9D");
 const FONT_TITLE = Font.systemFont(15);
@@ -38,7 +38,7 @@ textStack.layoutVertically();
 let wTextTitle = titleStack.addText("Calendar Week");
 let wTextWeek = weekStack.addText("" + getWeek(date));
 
-BG_GRADIENT.colors = GRADIENT_COLORS[0, 1];
+BG_GRADIENT.colors = GRADIENT_COLORS;
 BG_GRADIENT.locations = [0, 1];
 BG_GRADIENT.startPoint = GRADIENT_X;
 BG_GRADIENT.endPoint = GRADIENT_Y;
