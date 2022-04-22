@@ -55,9 +55,9 @@ weekStack.size = WEEK_SIZE;
 weekStack.borderWidth = BORDER_WIDTH;
 weekStack.topAlignContent();
 
-spacerStack.size = ;
+spacerStack.size = SPACER_SIZE;
 
-numberStack.size = ;
+numberStack.size = NUMBER_SIZE;
 numberStack.layoutVertically();
 
 let wTextTitle = titleStack.addText("Calendar Week");
