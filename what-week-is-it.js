@@ -12,25 +12,25 @@
 /**
  * All variables to set up the current date.
  */
- let date = new Date();
+let date = new Date();
 
 /**
  * All the variables needed for the widget.
  */
 const BG_GRADIENT = new LinearGradient();
-const GRADIENT_COLORS = [new Color("#292f29"), new Color("#addaca")];
+const GRADIENT_COLORS = [new Color("#7075ed"), new Color("#b4a1b")];
 const GRADIENT_X = new Point(0, 2);
 const GRADIENT_Y = new Point(0, 0);
-const TITLE_COLOR = new Color("#262f2f");
-const WEEK_COLOR = new Color("#809F9D");
+const TITLE_COLOR = new Color("#ade5df");
+const WEEK_COLOR = new Color("#ade5df");
 const FONT_TITLE = Font.systemFont(15);
 const FONT_WEEK = Font.boldSystemFont(80);
 const STACK_SIZE = new Size(150, 150);
 const TITLE_SIZE = new Size(120, 40);
-const WEEK_SIZE = new Size(100, 80);
-const SPACER_SIZE = new Size(10, 80);
-const NUMBER_SIZE = new Size(90, 80);
-const BORDER_WIDTH = 2;
+const WEEK_SIZE = new Size(120, 78);
+const SPACER_SIZE = new Size(10, 78);
+const NUMBER_SIZE = new Size(110, 78);
+const BORDER_WIDTH = 0;
 
 let widget = new ListWidget();
 
@@ -60,9 +60,11 @@ spacerStack.borderWidth = BORDER_WIDTH;
 numberStack.size = NUMBER_SIZE;
 numberStack.borderWidth = BORDER_WIDTH;
 numberStack.layoutVertically();
+numberStack.topAlignContent();
+numberStack.setPadding(0, 7, 5, 7);
 
 let wTextTitle = titleStack.addText("Calendar Week");
-let wTextWeek = weekStack.addText("" + getWeek(date));
+let wTextWeek = numberStack.addText("" + getWeek(date));
 
 BG_GRADIENT.colors = GRADIENT_COLORS;
 BG_GRADIENT.locations = [0, 1];
@@ -71,20 +73,17 @@ BG_GRADIENT.endPoint = GRADIENT_Y;
 
 widget.backgroundGradient = BG_GRADIENT;
 
-wTextTitle.leftAlignText();
 wTextTitle.textColor = TITLE_COLOR;
 wTextTitle.font = FONT_TITLE;
 wTextTitle.shadowRadius = 1;
-wTextTitle.shadowOffset = new Point(0, 2);
+wTextTitle.shadowOffset = new Point(0, 1);
 
-wTextWeek.leftAlignText();
 wTextWeek.textColor = WEEK_COLOR;
 wTextWeek.font = FONT_WEEK;
 wTextWeek.shadowRadius = 4;
 wTextWeek.shadowOffset = new Point(0, 3);
 
 let titleSpacer = titleStack.addSpacer(10);
-let numberSpacer = numberStack.addSpacer(10);
 
 /**
  * Gets the current week of the year.
