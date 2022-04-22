@@ -17,11 +17,14 @@
 /**
  * All the variables needed for the widget.
  */
-const BG_COLOR = new Color("#24def6");
+const BG_COLOR = new Color("#3db5dd");
+const BG_GRADIENT = new LinearGradient();
+const GRADIENT_X = new Point(0, 1);
+const GRADIENT_Y = new Point(0, 1);
 const TITLE_COLOR = new Color("#4cb3c0");
 const WEEK_COLOR = new Color("#78efff");
 const FONT_TITLE = Font.systemFont(15);
-const FONT_WEEK = Font.systemFont(70);
+const FONT_WEEK = Font.systemFont(75);
 
 let widget = new ListWidget();
 
@@ -35,12 +38,17 @@ textStack.layoutVertically();
 let wTextTitle = titleStack.addText("Calendar Week");
 let wTextWeek = weekStack.addText("" + getWeek(date));
 
+BG_GRADIENT.colors = ["#0a2837", "#3e8fb8"];
+BG_GRADIENT.locations = [0, 1];
+BG_GRADIENT.startPoint = GRADIENT_X;
+BG_GRADIENT.endPoint = GRADIENT_Y;
+
 wTextTitle.textColor = TITLE_COLOR;
 wTextTitle.font = FONT_TITLE;
 
 wTextWeek.textColor = WEEK_COLOR;
 wTextWeek.font = FONT_WEEK;
-wTextWeek.shadowRadius= 1;
+wTextWeek.shadowRadius= 4;
 
 /**
  * Gets the current week of the year.
