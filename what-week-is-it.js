@@ -28,6 +28,8 @@ const FONT_WEEK = Font.boldSystemFont(80);
 const STACK_SIZE = new Size(150, 150);
 const TITLE_SIZE = new Size(120, 40);
 const WEEK_SIZE = new Size(100, 80);
+const SPACER_SIZE = new Size(10, 80);
+const NUMBER_SIZE = new Size(90, 80);
 const BORDER_WIDTH = 2;
 
 let widget = new ListWidget();
@@ -35,6 +37,8 @@ let widget = new ListWidget();
 let textStack = widget.addStack();
 let titleStack = textStack.addStack();
 let weekStack = textStack.addStack();
+let spacerStack = weekStack.addStack();
+let numberStack = weekStack.addStack();
 
 textStack.size = STACK_SIZE;
 textStack.borderWidth = BORDER_WIDTH;
@@ -50,7 +54,11 @@ titleStack.bottomAlignContent();
 weekStack.size = WEEK_SIZE;
 weekStack.borderWidth = BORDER_WIDTH;
 weekStack.topAlignContent();
-weekStack.layoutVertically();
+
+spacerStack.size = ;
+
+numberStack.size = ;
+numberStack.layoutVertically();
 
 let wTextTitle = titleStack.addText("Calendar Week");
 let wTextWeek = weekStack.addText("" + getWeek(date));
@@ -75,7 +83,7 @@ wTextWeek.shadowRadius = 4;
 wTextWeek.shadowOffset = new Point(0, 3);
 
 let titleSpacer = titleStack.addSpacer(10);
-let weekSpacer = weekStack.addSpacer(10);
+let numberSpacer = numberStack.addSpacer(10);
 
 /**
  * Gets the current week of the year.
