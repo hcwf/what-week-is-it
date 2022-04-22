@@ -6,7 +6,7 @@
  * What Week Is It?!
  * A JavaScript widget for Scriptable on iOS.
  * Author: hcwf (https://github.com/hcwf)
- * Version: 1.1.2 22.04.2022
+ * Version: 1.1.3 22.04.2022
  */
 
 /**
