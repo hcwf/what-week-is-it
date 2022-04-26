@@ -20,7 +20,7 @@
  */
 let date = new Date();
 let dayofMonth = date.getDate();
-let month = date.getMonth() + 1;
+let month = date.getMonth();
 let year = date.getYear();
 let dayOfWeek = date.getDay() + 1;
 
