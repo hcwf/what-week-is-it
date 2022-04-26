@@ -74,7 +74,7 @@ numberStack.topAlignContent();
 numberStack.setPadding(0, 7, 5, 7);
 
 let wTextTitle = titleStack.addText("Calendar Week");
-let wTextWeek = numberStack.addText("" + getWeek(day, dayOfMonth, year, dayOfWeek));
+let wTextWeek = numberStack.addText("" + getWeek(dayOfMonth, month, year, dayOfWeek));
 
 BG_GRADIENT.colors = GRADIENT_COLORS;
 BG_GRADIENT.locations = [0, 1];
