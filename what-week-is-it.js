@@ -10,7 +10,7 @@
  * 
  * NOTES:
  * # I use "(current)" a lot in this script because it is mainly used
- * to get the week of the currenty date. If you so please you can modify
+ * to get the week of the current date. If you so please you can modify
  * the script to calculate the week for any date. Just pass the appropriate
  * parameters to the getWeek()-function.
  */
