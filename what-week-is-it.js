@@ -6,7 +6,7 @@
  * What Week Is It?!
  * A JavaScript widget for Scriptable on iOS.
  * Author: hcwf (https://github.com/hcwf)
- * Version: 1.2.3 26.04.2022
+ * Version: 1.2.4 27.054.2022
  * 
  * NOTES:
  * # I use "(current)" a lot in this script because it is mainly used
@@ -34,7 +34,7 @@ const GRADIENT_Y = new Point(0, 0);
 const TITLE_COLOR = new Color("#ade5df");
 const WEEK_COLOR = new Color("#ade5df");
 const FONT_TITLE = Font.systemFont(15);
-const FONT_WEEK = Font.boldSystemFont(80);
+const FONT_WEEK = Font.boldSystemFont(75);
 const STACK_SIZE = new Size(150, 150);
 const TITLE_SIZE = new Size(120, 40);
 const WEEK_SIZE = new Size(120, 78);
