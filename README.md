@@ -1,6 +1,8 @@
 # *What Week Is It?!* 
 ### A JavaScript widget for Scriptable on iOS.
 
+## What's new in 2.0?
+
 ## About
 
 This script computes the current week of the year and displays it in a widget.  
